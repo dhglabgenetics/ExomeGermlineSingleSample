@@ -181,6 +181,7 @@ task CollectAggregationMetrics {
     memory: "7000 MiB"
     disks: "local-disk " + disk_size + " HDD"
     preemptible: preemptible_tries
+    maxRetries: 3
   }
   output {
     File alignment_summary_metrics = "~{output_bam_prefix}.alignment_summary_metrics"
